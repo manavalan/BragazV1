@@ -1,0 +1,49 @@
+<div>
+    <h1 itemprop="name" class="title">{{product.ProductName}}</h1>
+    
+    <span class="rate"><star-rating-comp [starType]="'svg'" [rating]="product.Rating" [disabled]="true"></star-rating-comp></span>
+    <!-- <div itemprop="price" class="selling-price">
+       <strong>  Selling Price: Rs.{{product.SellingPrice }}/Piece</strong>
+     <p>Per Piece + GST (5%)</p>
+    </div>
+
+    <div itemprop="MRPprice" class="MRP-price">
+        MRP: Rs.{{product.ActualPrice}}/Piece    
+    </div>
+     
+      <p  class="MRP-price">
+          Minimum Order:<strong>{{product.MOQ}} Piece</strong>
+        </p> -->
+      
+        
+    <!-- <p class="vatInfo">Additional VAT may apply; charged at checkout</p> -->
+  </div>
+
+  <div >
+    <p>
+      <h4>Product details</h4>
+      <p>{{product.ProductDescription}}</p>
+      <!-- {{ this.product['ProductFeatures'] | json }} -->
+      <ul class="feature" *ngFor="let feature of product['ProductFeatures']">
+      <li>
+      <span>{{feature.ProductTag.ProductTagName}} :</span>
+      <!-- {{ this.feature['ProductTagValues'] | json }} -->
+      <ul class="description" *ngFor="let tagvalues of feature.ProductTag.ProductTagValues;let isLast=last" >
+          <!-- {{ this.tagvalues | json }} -->
+        <li>{{tagvalues.ProductTagValueName}}{{isLast ? '' : ', '}}</li>       
+      </ul>
+    </li>
+    </ul>
+      
+  
+      <blockquote>
+        <p>
+          <em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement
+            look by teaming this lace number with skinny jeans and pumps.</em>
+        </p>
+      </blockquote>
+  
+      
+  </div>
+
+ 

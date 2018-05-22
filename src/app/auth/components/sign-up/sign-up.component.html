@@ -1,0 +1,120 @@
+<div class="container">
+
+   
+
+    <div class="col-md-6 col-md-offset-3">
+        <div class="box">
+            <h1>New account</h1>
+
+            <p class="lead">Not our registered customer yet?</p>
+            <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
+            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+
+            <div class="alert alert-danger" role="alert" *ngIf="errormessage">{{errormessage}}</div>
+            <div *ngFor="let error of errorState">
+
+                    <div class="alert alert-danger" role="alert">{{error}}</div>
+            
+
+            </div>
+
+            <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                   
+                    <input type="text" class="form-control" name="Name" formControlName="Name"
+                    placeholder="Name" autocomplete="off">
+                    <div *ngIf="signUpForm.get('Name').errors && signUpForm.get('Name').touched">
+            <!-- <span class="register-error-message">{{signUpForm.get('Name').errors.msg </span> -->
+                                                      
+                                    <div *ngIf="signUpForm.get('Name').errors.pattern">
+                                            <p class="register-error-message"> Name not a number</p>
+                                    </div>
+                          </div>
+                </div>
+
+                <div class="form-group">
+                  
+                    <input type="text"   class="form-control" name="PhoneNumber"
+                    formControlName="PhoneNumber" placeholder="Mobile Number">
+                    <div *ngIf="signUpForm.get('PhoneNumber').errors && signUpForm.get('PhoneNumber').touched">
+                        <span class="register-error-message">{{signUpForm.get('PhoneNumber').errors.msg 
+                            || 'Please enter a valid mobile number (10 digits)'}}</span>
+
+                          <div *ngIf="signUpForm.get('PhoneNumber').errors.pattern">
+                                    <span class="register-error-message">Mobile number patten not match</span>
+                            </div>
+                      </div>
+                </div>
+
+                <div class="form-group">
+                  
+                    <input type="text"   class="form-control" name="OTP"
+                    formControlName="OTP" placeholder="OTP  ">
+                    <div *ngIf="signUpForm.get('OTP').errors && signUpForm.get('OTP').touched">
+                        <p class="register-error-message">{{signUpForm.get('OTP').errors.msg || 'Please enter a valid OTP (5 digits)'}}</p>
+
+                        <!-- <div *ngIf="signUpForm.get('OTP').errors.required">
+                                <p class="register-error-message"> Please enter a valid OTP (5 digits)</p>
+                        </div> -->
+
+                        
+                      </div>
+                </div>
+
+                <div class="form-group">
+                   
+                    <input type="email" class="form-control"   name="Email" formControlName="Email"
+                     placeholder="Your Email Address (optional)" autocomplete="off">
+                    <div *ngIf="signUpForm.get('Email').errors && signUpForm.get('Email').touched">
+                       <p class="register-error-message">{{signUpForm.get('Email').errors.msg}}</p>
+
+
+                        <!-- <div *ngIf="signUpForm.get('Email').errors.required">
+                                <p class="register-error-message"> 'Please enter a valid email id'</p>
+                        </div> -->
+
+                    <div *ngIf="signUpForm.get('Email').errors.pattern">
+                            <p class="register-error-message">Email patten not match</p>
+                    </div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    
+                    <input type="password" class="form-control"   name="Password" formControlName="Password"
+                    placeholder="Choose Password" autocomplete="off">
+                    <div *ngIf="signUpForm.get('Password').errors && signUpForm.get('Password').touched">
+                       <span class="register-error-message">{{signUpForm.get('Password').errors.msg
+                          || 'Password must be at least 6 characters'}}</span>
+
+                          <!-- <div *ngIf="signUpForm.get('Password').errors.required">
+                                <p class="register-error-message"> Please enter a valid Password</p>
+                        </div> -->
+    
+                        <div *ngIf="signUpForm.get('Password').errors.pattern">
+                                <span class="register-error-message">Password patten not match</span>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="form-group">                 
+                    <input type="password" class="form-control" name="ConfirmPassword" formControlName="ConfirmPassword"
+                    placeholder="Confirm Password" autocomplete="off">
+                    <div *ngIf="(signUpForm.get('ConfirmPassword').errors || signUpForm.hasError('mismatchedPasswords')) 
+                    && signUpForm.get('ConfirmPassword').touched">
+                      <p class="register-error-message">{{ 'Password must match'}}</p>
+                      </div>
+                </div>
+
+                        
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   
+
+
+</div>

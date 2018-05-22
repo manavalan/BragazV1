@@ -1,0 +1,74 @@
+ <!-- <p *ngIf="products.length === 0">No Products found for this category</p> -->
+    
+<!--<div *ngFor="let product of products  | filter : selectedProductsIds"   >
+        
+    {{product.ProductName}}
+    
+</div> -->
+
+
+  
+
+
+    <div class="row products">
+
+        <div class="col-md-3 col-sm-4" *ngFor="let product of products  | filter : selectedProductsIds">
+            <div class="product" [id]= "product.Document.ProductId"  [routerLink]="['', product.Document.ProductId]" >
+                <div class="image-container">
+                   
+                            <a itemprop="url">
+                                <img src="assets/images/product1.jpg" alt="" class="img-responsive">
+                            </a>
+                       
+                </div>
+               
+                <div class="text ">
+                    <a href="detail.html" class="productname">{{product.Document.ProductName}}</a>
+                    <span class="price"><span>Rs.</span>{{product.Document.SellingPrice}}</span>
+                    <span class="mrpprice"><span>Rs.</span>{{product.Document.ActualPrice}}</span>
+                    <span class="offer">{{product.Document.Discount}}<span>% OFF</span></span>
+                    <span class="moq">MOQ: {{product.Document.MOQ}}</span>
+                  
+                    <span class="rate"><star-rating-comp [starType]="'svg'" [rating]="product.Document.Rating" [disabled]="true"></star-rating-comp></span>
+                    <p class="buttons">
+                        <!-- <a href="detail.html" class="btn btn-default">View detail</a> -->
+                        <a  class="btn btn-primary"><i class="fa fa-shopping-cart"></i>View Detail</a>
+                    </p>
+                </div>
+                <!-- /.text -->
+            </div>
+            <!-- /.product -->
+        </div>
+
+
+
+    
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.products -->
+
+    <div class="pages">
+
+        <p class="loadMore">
+            <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Load more</a>
+        </p>
+
+        <!-- <ul class="pagination">
+            <li><a href="#">&laquo;</a>
+            </li>
+            <li class="active"><a href="#">1</a>
+            </li>
+            <li><a href="#">2</a>
+            </li>
+            <li><a href="#">3</a>
+            </li>
+            <li><a href="#">4</a>
+            </li>
+            <li><a href="#">5</a>
+            </li>
+            <li><a href="#">&raquo;</a>
+            </li>
+        </ul> -->
+    </div>
+
+

@@ -1,0 +1,35 @@
+
+<div class="row margin0" [formGroup]="form" *ngFor="let prop of sizeData" >
+   
+    <div class="col-xs-12 col-sm-4 col-4   paddingCtrl" >
+        <label [attr.for]="prop">{{prop.Description}}</label>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-4 borderRight borderLeft paddingCtrl">
+        <span class="input-group">  
+            <div class="input-group-btn">
+              <button class="btn btn-primary" (click)="decreaseValue(prop)">-</button>
+            </div>
+            <input [formControlName]="prop.key" [id]="prop.key" class="form-control" type="number" min="{{min}}" max="{{max}}" pattern="{{pattern}}"/>  
+            <div class="input-group-btn">
+              <button class="btn btn-primary" (click)="increaseValue(prop)">+</button>
+            </div>
+          </span>
+          <!-- <div class="error" *ngIf="form.get(prop.key).invalid && (form.get(prop.key).dirty || form.get(prop.key).touched)">
+              <div *ngIf="form.get(prop.key).errors.required">
+                {{ prop.SizeName }} is required.
+              </div>
+            </div> -->
+          </div>
+   
+    <div class="col-xs-12 col-sm-4 col-4 paddingCtrl">
+        <label [attr.for]="prop">Rs.{{prop.SellingPrice}}</label>
+    </div>
+
+</div>
+
+            
+     
+       
+        
+        
+      <!-- {{ this.sizeData | json }} -->

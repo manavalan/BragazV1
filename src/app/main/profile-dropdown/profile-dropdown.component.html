@@ -1,0 +1,66 @@
+<ul class="menu" *ngIf="!isAuthenticated">
+    <li>
+        <a (click)="openModalWithComponent()">Login</a>
+    </li>
+    <li>
+        <a [routerLink]="['/signup']">Register</a>
+    </li>
+
+</ul>
+<div *ngIf="isAuthenticated">
+<div class="btn-group pull-right" dropdown >
+    <button dropdownToggle type="button" class="btn btn-link dropdown-toggle">
+     Manavalan <span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item" routerLink="/user">My Profile</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" routerLink="/orders">My Orders</a>
+      </li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" routerLink="/Wishliste">Wishliste</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-buttons" *ngIf="!viewCart">
+
+      <div class="navbar-collapse collapse right" >
+          <a [routerLink]="['viewcart']" class="btn btn-primary">
+              <i class="fa fa-shopping-cart"></i>
+              <span class="hidden-sm">{{totalCartItems}} items in cart</span>
+          </a>
+      </div>
+  
+
+  </div>
+
+</div>
+
+
+<!-- <ul class="nav navbar-nav navbar-right" >
+   
+    <li class="dropdown" dropdown >
+      <a href="#" class="dropdown-toggle" dropdownToggle>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" *dropdownMenu>
+        <li><a routerLink="/user">My Profile</a></li>
+        <li><a routerLink="/user/orders">My Orders</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a routerLink="/user/addresses">Saved Addresses</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Edit Profile</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </li> -->
+  
+    <!-- <li class="cart" [routerLink]="['checkout','cart']">
+      <a>
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i> Bag
+        <span class="badge badge-danger">{{totalCartItems}}</span></a>
+    </li> -->
+  <!-- </ul> -->
+

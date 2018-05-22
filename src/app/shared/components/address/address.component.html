@@ -1,0 +1,67 @@
+
+<div [formGroup]="adressForm">
+<div class="form-group">
+                  
+    <input type="text"   class="form-control" name="AddressTitle"
+        formControlName="AddressTitle" placeholder="Address Title">
+        <div *ngIf="adressForm.get('AddressTitle').errors && adressForm.get('AddressTitle').touched">
+            <p class="register-error-message">{{adressForm.get('AddressTitle').errors.msg 
+              || 'Please enter a valid AddressTitle'}}</p>
+          </div>
+</div>
+
+<div class="form-group">
+                  
+    <input type="text"   class="form-control" 
+    formControlName="AddressLine1" placeholder="Address Line 1">
+    <div *ngIf="adressForm.get('AddressLine1').errors && adressForm.get('AddressLine1').touched">
+        <p class="register-error-message">{{adressForm.get('AddressLine1').errors.msg 
+          || 'Please enter a valid AddressLine'}}</p>
+      </div>
+  
+</div>
+
+<div class="form-group">
+                  
+    <input type="text"   class="form-control" 
+    formControlName="AddressLine2" placeholder="Address Line 2">
+  
+  
+</div>
+
+<div class="form-group">
+                  
+    <input type="text"   class="form-control" 
+    formControlName="Pincode" placeholder="Pincode">
+  
+</div>
+
+<div class="form-group">
+                  
+    <input type="text"   class="form-control" 
+    formControlName="City" placeholder="City">
+  
+</div>
+
+<div class="form-group">
+                  
+    <input type="text"   class="form-control" 
+    formControlName="State" placeholder="State">
+  
+</div>
+
+</div>
+
+<!-- <div [formGroup]="adressForm">
+    <div class="form-group col-xs-6">
+        <label>street</label>
+        <input type="text" class="form-control" formControlName="street">
+        <small [hidden]="adressForm.controls.street.valid" class="text-danger">
+            Street is required
+        </small>
+    </div>
+    <div class="form-group col-xs-6">
+        <label>postcode</label>
+        <input type="text" class="form-control" formControlName="postcode">
+    </div>
+</div> -->

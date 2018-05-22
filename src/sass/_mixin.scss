@@ -1,0 +1,15 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+
+  @mixin input-transition($transtion){
+    transition: $transtion ;
+    -webkit-transition: $transtion;
+    -moz-transition: $transtion;
+    -o-transition:$transtion;
+    -ms-transition: $transtion;
+
+  }

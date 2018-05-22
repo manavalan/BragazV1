@@ -1,0 +1,95 @@
+ <div class="container">
+
+
+
+  <div class="col-md-6 col-md-offset-3">
+    <div class="box">
+      <h1>Business Info</h1>
+     <form [formGroup]="BusinessForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+
+          <input type="text" class="form-control" name="BusinessName" formControlName="BusinessName" placeholder="Business Name" autocomplete="off">
+          <div *ngIf="BusinessForm.get('BusinessName').errors && BusinessForm.get('BusinessName').touched">
+              <p class="register-error-message">{{BusinessForm.get('BusinessName').errors.msg 
+                || 'Please enter a valid Business name'}}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+          <input type="text" class="form-control" name="GSTIN" 
+          formControlName="GSTIN" placeholder="GST No">
+          <div *ngIf="BusinessForm.get('GSTIN').errors && BusinessForm.get('GSTIN').touched">
+                        <p class="register-error-message">{{BusinessForm.get('GSTIN').errors.msg 
+                          || 'Please enter a valid GST  number'}}</p>
+                      </div>
+        </div>
+       
+ 
+        <div formArrayName="UserAddress">
+          <div *ngFor="let address of BusinessForm.controls.UserAddress.controls; let i=index">
+              <div [formGroupName]="i">
+            <address [addressInfo]="BusinessForm.controls.UserAddress.controls[i]"></address>
+            </div>
+          </div>
+        </div>
+
+         <div class="form-group">
+            <button type="button" class="btn btn-secondary" [disabled]="!isValidForm()" (click)="addAddress()">
+                <i class="fa fa-plus"></i> Add Address
+              </button>
+            </div>
+        
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-user-md"></i> Register</button>
+        </div>
+
+        <!-- <div class="margin-20">
+            <div>BusinessForm details:-</div>
+            <pre>Is BusinessForm valid?: <br>{{BusinessForm.valid | json}}</pre>
+            <pre>form value: <br>{{BusinessForm.value | json}}</pre>
+          </div> -->
+      </form>
+    </div>
+  </div>
+</div> 
+
+<!-- <form [formGroup]="BusinessForm" novalidate (ngSubmit)="save(BusinessForm)">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <small *ngIf="!BusinessForm.controls.name.valid" class="text-danger">
+          Name is required (minimum 5 characters).
+        </small>
+    </div>
+  
+    <div formArrayName="addresses">
+      <div *ngFor="let address of BusinessForm.controls.addresses.controls; let i=index" class="panel panel-default">
+        <div class="panel-heading">
+          <span>Address {{i + 1}}</span>
+          <span class="glyphicon glyphicon-remove pull-right" *ngIf="BusinessForm.controls.addresses.controls.length > 1" (click)="removeAddress(i)"></span>
+        </div>
+        <div class="panel-body" [formGroupName]="i">
+          <address [group]="BusinessForm.controls.addresses.controls[i]"></address>
+        </div>
+      </div>
+    </div>
+
+    <div class="margin-20">
+      <a (click)="addAddress()" style="cursor: default">
+        Add another address +
+      </a>
+    </div>
+
+    <div class="margin-20">
+      <button type="submit" class="btn btn-primary pull-right" [disabled]="!BusinessForm.valid">Submit</button>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="margin-20">
+      <div>BusinessForm details:-</div>
+      <pre>Is BusinessForm valid?: <br>{{BusinessForm.valid | json}}</pre>
+      <pre>form value: <br>{{BusinessForm.value | json}}</pre>
+    </div>
+  </form> -->

@@ -1,0 +1,8 @@
+<ul class="breadcrumb">
+    <li *ngFor="let breadcrumb of breadcrumbs; let i = index;">
+      <a [routerLink]="['/breadcrumb']" class="crumb">
+        <span>{{breadcrumb}}</span>
+      </a>
+     
+    </li>
+  </ul>

@@ -1,0 +1,19 @@
+<div class="col-md-12">
+
+  <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+
+
+
+</div>
+<div class="col-md-3" *ngIf="!isProductDetail">
+    <filter-summary></filter-summary>
+  <filter [productFilter]="ProductFilter$"></filter>
+</div>
+  <div class="col-md-9" *ngIf="!isProductDetail">
+    <!-- <product-content (productDetailEvent)="receiveProduct($event)"  [products]="products$ | async" [productsIds]="selectedProductsIds$ | async"></product-content> -->
+  <product-content  [products]="products$" [productsIds]="selectedProductsIds$ | async" ></product-content>
+  </div>
+  <div class="col-md-12">
+    <!-- <product-detail *ngIf="isProductDetail" [productInfo]="productDetail"></product-detail> -->
+  </div>
+

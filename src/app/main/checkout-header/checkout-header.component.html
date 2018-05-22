@@ -1,0 +1,23 @@
+
+  <div class="container-fluid" id="top">
+      <div class="col-md-6 offer" data-animate="fadeInDown">
+          <!-- <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over $50!</a> -->
+  
+          <form role="search">
+              <div class="input-group">
+                  <input type="text" class="form-control" name="search" placeholder="Search" [(ngModel)]="searchValue">
+                  <span class="input-group-btn">
+  
+                      <button type="submit" class="btn btn-primary" (click)="searchEngine()">
+                          <i class="fa fa-search"></i>
+                      </button>
+  
+                  </span>
+              </div>
+          </form>
+      </div>
+      <div class="col-md-6">
+        
+          <app-profile-dropdown [viewCart]="isviewCart" [isAuthenticated]="isAuthenticated | async"></app-profile-dropdown>
+      </div>
+  </div>

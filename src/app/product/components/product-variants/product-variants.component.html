@@ -1,0 +1,45 @@
+
+<div class="border productmargin">
+    <div class="row margin0 borderBottm" >
+        <div class="col-xs-12 col-sm-4 col-4" >
+            Size
+        </div>
+        <div class="col-xs-12 col-sm-4 borderRight borderLeft col-4" >
+            Pieces
+        </div>
+        <div class="col-xs-12 col-sm-4 col-4" >
+            Price
+        </div>
+    </div>
+    <app-number-picker [objectProps]="ProductSize"  [min]="0" [max]="60" [step]="10" [precision]="10" [inputDisabled]="true"
+                      (getDataObjEvent)="getDataChanged($event)">
+                    </app-number-picker>
+
+                    <div class="row  margin0 borderTop" >
+                        <div class="col-xs-12 col-sm-4 col-4" >
+                            <strong>Total: </strong>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 borderRight borderLeft col-4" >
+                            
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-4" >
+                            Rs.{{TotalPrice}}
+                        </div>
+                      </div>
+    </div>
+ 
+  
+  
+      
+
+
+
+
+    
+       
+
+         
+          
+    
+
+

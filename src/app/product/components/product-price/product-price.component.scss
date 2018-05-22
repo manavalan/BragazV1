@@ -1,0 +1,19 @@
+.rate{ display:inline-block;}
+h1 {    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #212121;
+    font-size: 18px;
+    font-weight: 400; 
+    margin: 0px;
+}
+
+@import "~angular-star-rating/assets/scss/star-rating";
+
+star-rating-comp .rating:focus{ border: none;}
+.rate{ display:inline-block;}
+ul.description{ display: inline;     margin: 0;
+    padding: 0;}
+.description li{display: inline;}
+.feature{ display: inline-block;
+    width: 200px;
+    margin: 0px 0px 10px;}

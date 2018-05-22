@@ -1,0 +1,75 @@
+<div id="content">
+
+    <!-- <div  *ngFor="let n of homePage$ | async"></div> -->
+
+
+    
+  <div class="container-fluid">
+      <div class="col-md-12">
+          <div id="main-slider">
+              <div class="item">
+                  <img src="assets/images/main-slider1.jpg" alt="" class="img-responsive">
+              </div>
+              <div class="item">
+                  <img class="img-responsive" src="assets/images/main-slider2.jpg" alt="">
+              </div>
+              <div class="item">
+                  <img class="img-responsive" src="assets/images/main-slider3.jpg" alt="">
+              </div>
+              <div class="item">
+                  <img class="img-responsive" src="assets/images/main-slider4.jpg" alt="">
+              </div>
+          </div>
+          <!-- /#main-slider -->
+      </div>
+  </div>
+
+
+
+ 
+
+  <!-- *** HOT PRODUCT SLIDESHOW ***
+_________________________________________________________ -->
+<div id="hot" *ngFor="let homeDate of homePage$ | async">
+
+      <!-- <div class="box">
+          <div class="container-fluid">
+              <div class="col-md-12"> -->
+                  <h2>{{homeDate.Type}}</h2>
+              <!-- </div>
+          </div>
+      </div> -->
+
+      <div class="container-fluid">
+          <div class="product-slider">
+              <div class="item" *ngFor="let imageData of homeDate.HomeCategoryProducts">
+                  <div class="product">
+                      
+                                  <a href="detail.html">
+                                      <img [src]="imageData.Product.ProductImages[0].ImageUrl" [alt]="imageData.Product.ProductImages[0].ImageName" class="img-responsive">
+                                  </a>
+                       
+                    
+                      <div class="text">
+                          <h3><a href="detail.html">{{imageData.Product.ProductName}}</a></h3>
+                          <p class="price">Rs.{{imageData.Product.SellingPrice}}</p>
+                      </div>
+                    
+                  </div>
+               
+              </div>
+
+           
+
+          </div>
+      
+      </div>
+     
+
+  </div> 
+
+ 
+
+
+
+</div>

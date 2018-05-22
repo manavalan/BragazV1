@@ -1,0 +1,26 @@
+<div class="box" *ngIf="images">
+
+    <img itemprop="image" [src]="selectedImage.ImageUrl" 
+    [alt]="selectedImage.ImageName"
+    class="img-responsive" />
+    <div class="ribbon sale">
+        <div class="theribbon">SALE</div>
+        <div class="ribbon-background"></div>
+    </div>
+</div>
+
+    <div class="row" id="thumbs">
+        <div class="col-xs-3" *ngFor="let image of images">
+     
+        <img class="img-responsive" 
+             [src]="image.ThumbImageUrl"
+             [alt]="image.alt"
+             (mouseover)="onMouseOver(image)" >
+  
+
+    
+    </div>
+    </div>
+
+    
+  
