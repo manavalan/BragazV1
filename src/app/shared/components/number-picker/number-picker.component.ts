@@ -82,9 +82,9 @@ export class NumberPickerComponent implements OnInit {
   }
 
   private decreaseValue(currentValue): void {
-    currentValue = {
-      MoQ: 0
-    };
+    // currentValue = {
+    //   MoQ: 0
+    // };
     let currentItem = currentValue.MoQ;
     if (currentItem > this.min) {
       currentItem = currentItem - this.step;
@@ -94,8 +94,11 @@ export class NumberPickerComponent implements OnInit {
       if (this.currentPrice == null) {
         this.currentPrice = this.sizeData[currentValue.key].SellingPrice;
       }
-
-      const price = currentItem * this.currentPrice;
+      let itemVal;
+      if (currentItem ==0){ itemVal=1} else{
+        itemVal=currentItem;
+      }
+      const price = itemVal * this.currentPrice;
       this.sizeData[currentValue.key].SellingPrice = price;
 
       this.form.controls[currentValue.key].patchValue(currentItem);

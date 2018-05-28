@@ -45,9 +45,10 @@ export function reducer(state = initialState, { type, payload }: any): CheckoutS
         }) as CheckoutState;
 
       case CheckoutActions.ADD_TO_CART_SUCCESS:
+     
         _lineItem = payload;
         _lineItemId = _lineItem.id;
-
+       
         // return the same state if the item is already included.
         if (state.lineItemIds.includes(_lineItemId)) {
           return state;

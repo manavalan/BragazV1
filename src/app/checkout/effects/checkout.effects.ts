@@ -19,10 +19,11 @@ export class CheckoutEffects {
     AddToCart$ = this.actions$
     .ofType(CheckoutActions.ADD_TO_CART)
     .switchMap((action: any) => {
- 
+      debugger;
       return this.checkoutService.createNewLineItem(action.payload);
     })
-    .map((lineItem: Cart) => { // debugger;
+    .map((lineItem: Cart) => { 
+       
       this.actions.addToCartSuccess(lineItem)});
   //}
   // @Effect()

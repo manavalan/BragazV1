@@ -13,7 +13,7 @@
     <div class="row products">
 
         <div class="col-md-3 col-sm-4" *ngFor="let product of products  | filter : selectedProductsIds">
-            <div class="product" [id]= "product.Document.ProductId"  [routerLink]="['', product.Document.ProductId]" >
+            <div class="product" [id]= "product.Document.ProductId"  [routerLink]="['product', product.Document.ProductId]" >
                 <div class="image-container">
                    
                             <a itemprop="url">

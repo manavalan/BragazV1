@@ -22,7 +22,7 @@ import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { SearchModule } from './search/search.module';
- import { SellerModule } from './seller/seller.module';
+import { SellerModule } from './seller/seller.module';
 import { CoreModule } from './core/core.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './app.reducers';
@@ -57,7 +57,7 @@ import 'rxjs/add/observable/of';
     ProductModule,
     AuthModule,
     SearchModule,
-    SellerModule,
+   SellerModule,
     // FilterPipe,
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

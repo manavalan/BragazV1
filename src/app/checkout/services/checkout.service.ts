@@ -28,8 +28,7 @@ export class CheckoutService {
   ) {
       this.store.select(getOrderNumber)
         .subscribe(number => {
-          debugger
-          this.orderNumber = number});
+           this.orderNumber = number});
     }
 
 //  Change below methods once angular releases RC4, so that this methods can be called from effects
@@ -54,6 +53,7 @@ export class CheckoutService {
         CartDetail: product.ProductSets
         }
     ).map(res => {
+      debugger;
       const lineItem: Cart =  res.json();
       return lineItem;
     });

@@ -19,6 +19,7 @@ export class ProductDetailComponent implements OnInit {
   // routeSubs: Subscription;
   productId: any;
   images: any;
+  selectedImage:any;
   constructor(private productService: ProductService,
     private route: ActivatedRoute,
     private store: Store<AppState>,
@@ -34,6 +35,7 @@ export class ProductDetailComponent implements OnInit {
             .subscribe(response => {
               this.productInfo = response;
               this.images = this.productInfo.ProductImages;
+              this.selectedImage=this.productInfo.ProductImages[0];
             });
        }
       );
